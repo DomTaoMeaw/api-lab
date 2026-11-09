@@ -71,3 +71,16 @@
 - Test Result: PASSED
 - Total Tests: 1 passed
 - Execution Time: 1.01 seconds  
+
+### Step 0.7: Testing the Tools Endpoint
+
+- Test File: test_tools.py
+- Test Function: test_get_tools
+- API Endpoint: GET /api/tools
+- Authentication: Authorization Token
+- Assertions:
+  - HTTP Status Code is 200
+  - Tools match ["Knife", "Pizza cutter", "Scissors"]
+- Test Result: PASSED
+- Total Tests: 2 passed
+- Execution Time: 2.02 seconds
