@@ -107,3 +107,20 @@
 
 - Total Tests: 4 passed
 - Execution Time: 3.82 seconds
+
+### Step 0.9: Create a New User and Login
+
+- Created a new user using POST /api/users.
+  - Status Code: 201
+  - User ID: 1137
+  - Username: lab-dc6aa2b7e107
+
+- Logged in using POST /api/users/token/login.
+  - Status Code: 200
+  - Authentication Token: Received successfully
+
+- Retrieved ratings using GET /api/ratings.
+  - Status Code: 200
+  - Response: {"ratings": []}
+
+- Result: Successfully created a new user, logged in, and confirmed that the user has no ratings.
