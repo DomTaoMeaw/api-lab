@@ -168,3 +168,16 @@
   - Wrong password: HTTP 401.
   - Empty username: HTTP 400.
   - All error responses matched the expected messages.
+
+### Step 0.16: Tested excluded tools.
+  - Test result: 17 passed, 1 xfailed in 21.29s.
+  - Excluding Knife: PASSED.
+  - Excluding Scissors: PASSED.
+  - Excluding Knife and Scissors: PASSED.
+  - Excluding all three tools: XFAILED.
+
+- Defect 1: The API returns HTTP 500 with an empty response body
+  when all three tools are excluded.
+  - Expected: HTTP 400 with a clear error message.
+  - Actual: HTTP 500 with Content-Length: 0.
+  - The test is marked as xfail because the API defect is known.  
