@@ -25,3 +25,15 @@
     - Knife
     - Pizza cutter
     - Scissors
+
+
+### Step 0.4: Create a Vegetarian Pizza
+
+- API Endpoint: POST /api/pizza
+- Request Body:
+  {"mustBeVegetarian": true}
+- Pizza ID: 53700
+- Pizza returned: The Dark Frutti di Mare
+- Calories: 425
+- Vegetarian: true
+- Number of ingredients: 6
