@@ -84,3 +84,26 @@
 - Test Result: PASSED
 - Total Tests: 2 passed
 - Execution Time: 2.02 seconds
+
+### Step 0.8: Testing Pizza Creation
+
+- Test File: test_pizza.py
+
+- Test 1: test_create_vegetarian_pizza
+  - API Endpoint: POST /api/pizza
+  - Authentication: Valid Token
+  - Expected Status Code: 200
+  - Verified that the pizza name is not empty.
+  - Verified that the pizza is vegetarian.
+  - Verified that all ingredients are vegetarian.
+  - Result: PASSED
+
+- Test 2: test_create_pizza_without_token
+  - API Endpoint: POST /api/pizza
+  - Authentication: No Token
+  - Expected Status Code: 401
+  - Expected Error: authentication failed
+  - Result: PASSED
+
+- Total Tests: 4 passed
+- Execution Time: 3.82 seconds
