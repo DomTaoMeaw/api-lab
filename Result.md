@@ -262,3 +262,76 @@ Defect 1 remains marked as XFAILED because the API returns HTTP 500 instead of t
 - Part A3: 4 passed in 9.10s.
 - Full test suite: 30 passed, 1 xfailed in 41.79s.
 - Failed: 0
+
+## Part A4: Testing Rating Ownership
+
+### Test File
+`test_rating_owner.py`
+
+### Test Cases and Results
+
+| Test Case | Result |
+|---|---|
+| Other user cannot read a rating | PASSED |
+| Other user cannot update a rating | PASSED |
+| Other user cannot delete a rating | PASSED |
+
+### Full Test Suite Results
+- Total tests: 34
+- Passed: 33
+- Xfailed: 1
+- Failed: 0
+- Execution time: 50.15 seconds
+
+### Conclusion
+The API prevents other users from reading, updating, or deleting a rating they do not own. The original rating remains unchanged after unauthorized update and delete attempts.
+
+
+### Part B
+### 1. API Tests vs. Unit Tests
+
+API tests using a real server can detect problems that unit tests with stubs may miss, such as:
+1. Integration issues between the API and the database.
+2. Problems with HTTP responses, authentication, and communication between components.
+
+Unit tests are still necessary because they are faster and help developers test individual functions separately. They also make it easier to identify and fix bugs.
+
+### 2. Creating a Separate User for Each Test
+
+Each test creates its own user to keep tests independent and avoid sharing data.
+
+In a shop or hotel system, each customer should have their own account to protect personal information and prevent unauthorized access.
+
+### 3. Using One Session
+
+A session keeps cookies between requests, so the API can recognize the same client.
+
+Without a session, cookies may be lost, causing authentication or request failures.
+
+### 4. Excluded Tools Defect
+
+The `test_exclude_all_tools` test reveals a defect. The API returns HTTP 500 with an empty response instead of HTTP 400 with a clear error message.
+
+HTTP 500 makes the problem harder to understand and debug. It is marked as xfail because the API has a known issue and the test is expected to fail.
+
+### 5. Base Choice Testing
+
+Base choice coverage requires 9 test cases, while testing all possible combinations requires 72 test cases.
+
+Base choice testing is more efficient because it tests each input condition without testing every possible combination.
+
+### 6. Rating Ownership
+
+The API returned HTTP 404 for reading and HTTP 400 for updating and deleting a rating owned by another user.
+
+These results were expected because users should only access and manage their own ratings. The original rating remained unchanged.
+
+### 7. Made-up Token
+
+The API returned HTTP 200 and displayed the ratings even though the request used an invalid token.
+
+This is a security defect because the API does not properly validate the token. Unauthorized users may access private data, which creates a data security risk.
+
+### 8. API Testing vs. UI Testing
+
+API tests are faster and more reliable because they test the backend directly without depending on the user interface. They also make it easier to test many inputs and error cases.

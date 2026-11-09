@@ -45,6 +45,10 @@ def pizza_id(api, auth):
     return res.json()["pizza"]["id"]
 
 @pytest.fixture
+def other_auth(api):
+    return log_in_new_user(api)
+
+@pytest.fixture
 def rating(api, auth, pizza_id):
     """A rating with 3 stars, made before the test and deleted after it."""
     new = {"pizza_id": pizza_id, "stars": 3}
