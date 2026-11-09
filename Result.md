@@ -11,3 +11,17 @@
 - Content-Length: 243 bytes
 - Set-Cookie Header: AWSALB, AWSALBCORS
 - Vary Header: Origin
+
+
+### Step 0.3: Authentication
+
+- API Endpoint: GET /api/tools
+- Without Token:
+  - HTTP Status Code: 401
+  - Response: {"error":"authentication failed"}
+- With Token:
+  - HTTP Status Code: 200
+  - Tools returned:
+    - Knife
+    - Pizza cutter
+    - Scissors
