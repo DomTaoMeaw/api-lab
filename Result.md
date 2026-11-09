@@ -124,3 +124,14 @@
   - Response: {"ratings": []}
 
 - Result: Successfully created a new user, logged in, and confirmed that the user has no ratings.
+
+### Step 0.10: Create a Reusable API Client
+
+- Created conftest.py.
+- Created QuickPizza class inheriting from requests.Session.
+- Configured the base URL: https://quickpizza.grafana.com
+- Overrode the request() method to automatically add the base URL.
+- Created an api fixture with session scope.
+- Ran pytest -v to check existing tests.
+- Test Result: 4 passed
+- Execution Time: 3.69 seconds
