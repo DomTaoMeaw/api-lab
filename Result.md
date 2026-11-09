@@ -135,3 +135,12 @@
 - Ran pytest -v to check existing tests.
 - Test Result: 4 passed
 - Execution Time: 3.69 seconds
+
+### Step 0.11: Test a New User's Ratings
+
+- Created a new user and logged in using the auth fixture.
+- Sent GET /api/ratings with the user's authentication token.
+- Expected Status Code: 200
+- Expected Response: {"ratings": []}
+- Result: PASSED
+- Pytest: 5 passed in 6.24s
