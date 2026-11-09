@@ -144,3 +144,9 @@
 - Expected Response: {"ratings": []}
 - Result: PASSED
 - Pytest: 5 passed in 6.24s
+
+### Step 0.12, results of the three runs without a session (optional):
+  - Run 1: FAILED (Login returned 401)
+  - Run 2: PASSED (Login returned 200)
+  - Run 3: FAILED (Login returned 401)
+  - Summary: 2 failed and 1 passed.
