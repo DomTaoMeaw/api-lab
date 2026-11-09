@@ -231,3 +231,34 @@ Full test suite:
 - Execution Time: 32.36 seconds
 
 Defect 1 remains marked as XFAILED because the API returns HTTP 500 instead of the expected HTTP 400 when all three tools are excluded.
+
+
+## Part A3: Testing Rating Updates
+
+### API Endpoint
+`PUT /api/ratings/{id}`
+
+### Test File
+`test_update_rating.py`
+
+### Test Function
+`test_update_rating_stars`
+
+### Test Cases
+
+| Stars | Expected Status Code | Result |
+|---|---|---|
+| 0 | 400 | PASSED |
+| 1 | 200 | PASSED |
+| 5 | 200 | PASSED |
+| 6 | 400 | PASSED |
+
+### Assertions
+- Stars values 1 and 5 were successfully updated.
+- Stars values 0 and 6 were rejected.
+- After a rejected update, the original rating remained unchanged.
+
+### Test Results
+- Part A3: 4 passed in 9.10s.
+- Full test suite: 30 passed, 1 xfailed in 41.79s.
+- Failed: 0
