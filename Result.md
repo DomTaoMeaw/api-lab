@@ -150,3 +150,9 @@
   - Run 2: PASSED (Login returned 200)
   - Run 3: FAILED (Login returned 401)
   - Summary: 2 failed and 1 passed.
+
+### Step 0.13: Created a new rating successfully.
+  - Test result: 6 passed in 6.42s.
+  - Verified the rating ID, stars, and pizza ID.  
+
+  
