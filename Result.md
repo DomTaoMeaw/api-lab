@@ -155,4 +155,9 @@
   - Test result: 6 passed in 6.42s.
   - Verified the rating ID, stars, and pizza ID.  
 
-  
+### Step 0.14: Tested reading, updating, and deleting ratings.
+  - Test result: 9 passed in 15.04s.
+  - Read rating: HTTP 200.
+  - Update rating: HTTP 200.
+  - Delete rating: HTTP 204.
+  - Read deleted rating: HTTP 404.  
