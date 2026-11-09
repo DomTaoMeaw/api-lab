@@ -161,3 +161,10 @@
   - Update rating: HTTP 200.
   - Delete rating: HTTP 204.
   - Read deleted rating: HTTP 404.  
+
+### Step 0.15: Tested refused requests.
+  - Test result: 12 passed in 15.63s.
+  - Duplicate username: HTTP 400.
+  - Wrong password: HTTP 401.
+  - Empty username: HTTP 400.
+  - All error responses matched the expected messages.
