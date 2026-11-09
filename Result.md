@@ -181,3 +181,17 @@
   - Expected: HTTP 400 with a clear error message.
   - Actual: HTTP 500 with Content-Length: 0.
   - The test is marked as xfail because the API defect is known.  
+
+
+## Part A2: Testing Different Input Blocks
+
+### C1: Stars Range
+- Stars = 0: HTTP 400 (Rejected)
+- Stars = 6: HTTP 400 (Rejected)
+
+### C2: Stars Type
+- Decimal (3.5): HTTP 400 (Rejected)
+- Text ("three"): HTTP 400 (Rejected)
+- Missing stars: HTTP 400 (Rejected)
+
+All tests passed successfully.  
