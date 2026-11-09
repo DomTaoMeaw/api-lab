@@ -37,3 +37,25 @@
 - Calories: 425
 - Vegetarian: true
 - Number of ingredients: 6
+
+### Step 0.5: Using Python Requests
+
+- GET /api/names
+  - Status Code: 200
+  - Content-Type: application/json
+  - Content-Length: 243
+  - Number of pizza names: 18
+
+- GET /api/tools (with authentication)
+  - Status Code: 200
+  - Tools returned: Knife, Pizza cutter, Scissors
+
+- POST /api/pizza (with authentication)
+  - Request Body: `{"mustBeVegetarian": true}`
+  - Status Code: 200
+  - Pizza ID: 110831
+  - Pizza Name: The Young Fungi e Olive
+  - Dough: Thick
+  - Calories: 425
+  - Vegetarian: true
+  - Number of ingredients: 6
