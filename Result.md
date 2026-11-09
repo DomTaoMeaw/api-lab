@@ -59,3 +59,15 @@
   - Calories: 425
   - Vegetarian: true
   - Number of ingredients: 6
+
+### Step 0.6: First API Test with pytest
+
+- Test File: test_names.py
+- Test Function: test_get_pizza_names
+- API Endpoint: GET /api/names
+- Assertions:
+  - HTTP Status Code is 200
+  - Margherita exists in the pizza names
+- Test Result: PASSED
+- Total Tests: 1 passed
+- Execution Time: 1.01 seconds  
