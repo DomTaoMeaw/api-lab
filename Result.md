@@ -194,4 +194,40 @@
 - Text ("three"): HTTP 400 (Rejected)
 - Missing stars: HTTP 400 (Rejected)
 
-All tests passed successfully.  
+All tests passed successfully.
+
+### C3: Pizza ID
+
+- Existing pizza (Base): A valid pizza ID was used.
+- Non-existing pizza ID (999999999):
+  - HTTP Status Code: 400
+  - Error: `pizza ID 999999999 not found`
+- Result: PASSED
+
+### C4: Authorization Token
+
+- Missing token:
+  - HTTP Status Code: 401
+  - Error: `authentication failed`
+- Invalid short token (`short`):
+  - HTTP Status Code: 401
+  - Error: `authentication failed`
+- Result: PASSED
+
+### Part A2: Overall Test Results
+
+- Test File: `test_create_rating.py`
+- Total test cases: 9
+- C1: Stars value
+- C2: Stars type
+- C3: Pizza ID
+- C4: Authorization token
+
+Full test suite:
+- Total tests collected: 27
+- Passed: 26
+- Xfailed: 1
+- Failed: 0
+- Execution Time: 32.36 seconds
+
+Defect 1 remains marked as XFAILED because the API returns HTTP 500 instead of the expected HTTP 400 when all three tools are excluded.

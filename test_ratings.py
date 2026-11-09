@@ -1,4 +1,3 @@
-STARS_ERROR = "number of stars must be between 1 and 5 (inclusive)"
 
 # A new rating comes back with an id, its stars and its pizza.
 def test_create_rating(api, auth, pizza_id):
@@ -42,37 +41,4 @@ def test_delete_rating(api, auth, rating):
 
     res = api.get(path, headers=auth)
 
-    assert res.status_code == 404    
-
-# C2: Decimal stars are refused.
-def test_decimal_stars(api, auth, pizza_id):
-    new = {"pizza_id": pizza_id, "stars": 3.5}
-
-    res = api.post("/api/ratings", json=new, headers=auth)
-
-    assert res.status_code == 400
-    assert res.json() == {
-        "error": "json: cannot unmarshal number 3.5 into Go struct field Rating.stars of type int"
-    }
-
-
-# C2: Text stars are refused.
-def test_text_stars(api, auth, pizza_id):
-    new = {"pizza_id": pizza_id, "stars": "three"}
-
-    res = api.post("/api/ratings", json=new, headers=auth)
-
-    assert res.status_code == 400
-    assert res.json() == {
-        "error": "json: cannot unmarshal string into Go struct field Rating.stars of type int"
-    }
-
-
-# C2: Missing stars are refused.
-def test_missing_stars(api, auth, pizza_id):
-    new = {"pizza_id": pizza_id}
-
-    res = api.post("/api/ratings", json=new, headers=auth)
-
-    assert res.status_code == 400
-    assert res.json() == {"error": STARS_ERROR}    
+    assert res.status_code == 404
